@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: seeds-test-production
+  namespace: production
+  labels:
+    app: seeds-test-production
+spec:
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 8080
+  selector:
+    app: "seeds-test-production"
+  type: "LoadBalancer"
+  loadBalancerIP: ""

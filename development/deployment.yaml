@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seeds-test-development
+  namespace: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: seeds-test-development
+  template:
+    metadata:
+      labels:
+        app: seeds-test-development
+    spec:
+      containers:
+        - name: seeds-test-development
+          image:  asia-southeast1-docker.pkg.dev/steady-force-423006-n3/seeds-test/kubernetes-seeds-staging:latest
+          envFrom:
+            - configMapRef:
+                name: seeds-test-development-configmap
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always

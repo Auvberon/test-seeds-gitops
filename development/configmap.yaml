@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: seeds-test-development-configmap
+  namespace: development
+  labels:
+    app: seeds-test-development
+data: 
+  Environment_Name: "development"

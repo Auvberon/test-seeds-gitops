@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: seeds-test-production-configmap
+  namespace: production
+  labels:
+    app: seeds-test-production
+data: 
+  Environment_Name: "production"
